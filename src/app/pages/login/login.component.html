@@ -1,0 +1,35 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid"><br><br>
+  <div class="row">
+    <div class="col-md-6 offset-md-4">
+      <mat-card>
+      <div class="text-center">
+        <img src="../../../assets/logo.png" alt="logo">
+        <h1>Welcome back!</h1>
+          <h1>Enter your details below to Login!</h1>
+      </div>
+      <form method="post">
+        <p>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input required [(ngModel)]="log.username" name="username" matInput placeholder="Set username">
+          </mat-form-field><br><br>
+
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input required id="myInput" [(ngModel)]="log.password" name="password" matInput placeholder="Set password" type="password">
+          </mat-form-field><br><br>
+        </p>
+      </form>
+
+      <div class="example-button-row text-center">
+        <button type="submit"   *ngIf="isloggedin != 'true'" mat-raised-button (click)="userLogin()">Login</button>
+        <button *ngIf="isloggedin != 'true'" style="margin-left: 20px;" type="reset" mat-raised-button (click)="reset()">Reset</button>
+      </div>
+    </mat-card>
+    <br><br><br><br><br>
+    </div>
+  </div>
+</div>
+</div>

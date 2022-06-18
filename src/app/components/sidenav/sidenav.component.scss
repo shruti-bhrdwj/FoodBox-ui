@@ -1,0 +1,33 @@
+.sidebar {
+  margin-top: 30px;
+  padding: 0;
+  width: 300px;
+  background-color: #fff;
+  height: fit-content;
+  overflow: auto;
+  float: left;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: larger;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #453c2b;
+  color: white;
+}
+p{
+  text-align: center;
+  font-weight: 600;
+  font-size: larger;
+  float: none;
+}
+div{
+  text-align: center;
+  border-radius: 10px;
+}

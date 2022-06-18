@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body{
+  background-color: #ddd;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  min-height: 660px;
+  display: flex;
+  flex-direction: column;
+}
+.container-fluid{
+  min-height: 1000px;
+  background-image: url("assets/bg-foodbox.jpg");
+  background-repeat: repeat;
+}
+.side-navigation {
+  display: flex;
+  width: 240px;
+}
+.main {
+  display: flex;
+  width: 100vw- 240px;
+}
+footer{
+  margin-top: auto;
+}

@@ -1,0 +1,49 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid"><br>
+  <div class="row">
+    <div class="col-md-6 offset-md-4">
+      <mat-card>
+      <div class="text-center">
+        <img src="../../../assets/logo.png" alt="logo">
+        <h1>Welcome buddy!</h1>
+          <h1>Enter your details below to Register!</h1>
+      </div>
+      <!-- {{signup | json}} -->
+      <form method="post">
+        <p>
+
+          <!-- username field  -->
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input required [(ngModel)]="signup.username" name="username" matInput placeholder="Set username">
+          </mat-form-field><br><br>
+
+          <!-- email field  -->
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input [(ngModel)]="signup.email" name="email" matInput placeholder="Enter email" type="email">
+            <mat-hint>eg: example@gmail.com</mat-hint>
+          </mat-form-field><br><br>
+
+          <!-- password field  -->
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input required id="myInput" [(ngModel)]="signup.password" name="password" matInput placeholder="Set password" type="password">
+            <mat-hint>Suggestion: use combination of alphabets, numbers & special characters</mat-hint>
+          </mat-form-field><br><br>
+        </p>
+      </form>
+
+      <div class="example-button-row text-center">
+        <button type="submit" mat-raised-button (click)="register()">Register</button>
+        <button style="margin-left: 20px;" type="reset" mat-raised-button  (click)="reset()">Reset</button>
+      </div>
+    </mat-card>
+    <br><br>
+    </div>
+  </div>
+</div>
+</div>
