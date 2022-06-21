@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginForm } from 'src/app/pages/login/login.component';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   isloggedin;
   isAdmin;
+  public log : LoginForm = {
+    username: '',
+    password: ''
+  };
   constructor() {
     this.isloggedin =  localStorage.getItem('loginStatus');
     this.isAdmin =  localStorage.getItem('checkAdmin');
@@ -19,8 +24,10 @@ export class NavbarComponent implements OnInit {
   logout(){
     this.isloggedin = "false";
     this.isAdmin = "false";
+    this.log.username = "";
     localStorage.setItem('loginStatus', this.isloggedin)
     localStorage.setItem('checkAdmin', this.isAdmin)
+    localStorage.setItem('username', this.log.username)
     window.location.href = '/home';
   }
 

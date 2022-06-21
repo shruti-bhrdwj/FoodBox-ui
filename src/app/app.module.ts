@@ -30,6 +30,12 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
 import { SlideboxComponent } from './components/slidebox/slidebox.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { AddProductComponent } from './pages/products/add-product/add-product.component';
+import { UpdateProductComponent } from './pages/products/update-product/update-product.component';
+import { ListordersComponent } from './pages/Orders/listorders/listorders.component';
+import { OrderdetailsComponent } from './pages/Orders/orderdetails/orderdetails.component';
 
 
 
@@ -45,7 +51,13 @@ import { SlideboxComponent } from './components/slidebox/slidebox.component';
     UserDashboardComponent,
     AdminDashboardComponent,
     ProfileComponent,
-    SlideboxComponent
+    SlideboxComponent,
+    CartComponent,
+    ProductsComponent,
+    AddProductComponent,
+    UpdateProductComponent,
+    ListordersComponent,
+    OrderdetailsComponent
   ],
   imports: [
     BrowserModule,

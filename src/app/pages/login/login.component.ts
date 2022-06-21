@@ -4,8 +4,8 @@ import { UserService } from 'src/app/services/user-service.service';
 import Swal from 'sweetalert2';
 
 export interface LoginForm {
-  username?: string,
-  password?: string,
+  username: string,
+  password: string,
 }
 @Component({
   selector: 'app-login',
@@ -14,7 +14,10 @@ export interface LoginForm {
 })
 export class LoginComponent implements OnInit {
 
-  public log : LoginForm = {};
+  public log : LoginForm = {
+    username: '',
+    password: ''
+  };
   isloggedin: string = 'false';
   isAdmin: string= "false";
   constructor(private userService:UserService, private snack:MatSnackBar) { }
@@ -42,6 +45,7 @@ export class LoginComponent implements OnInit {
       if(res.status == 200) {
         Swal.fire('SUCCESS','You are registered sucessfully', 'success');
         this.isloggedin="true";
+        localStorage.setItem('username', this.log.username)
         this.userService.setUser(res.data)
         localStorage.setItem('loginStatus', this.isloggedin)
 
@@ -70,7 +74,8 @@ export class LoginComponent implements OnInit {
   }
 
   reset(){
-    this.log = {}
+    this.log.username= ''
+    this.log.password= ''
   }
 
 }

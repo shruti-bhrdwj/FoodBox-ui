@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <br>
+  <div id="align-text">
+    <div *ngIf="productEdit">
+      <app-add-product></app-add-product>
+      <app-update-product [productId]="pId"></app-update-product>
+    </div>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert" [style.display]="displayAlert">
+      <strong>Product successfully added to cart !</strong>
+      <button type="button" (click)="onCloseAlert1()" class="close" data-hide="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="alert alert-success alert-dismissible fade show" role="alert" [style.display]="displayAlertPresent">
+      <strong>Product is already present in the cart !</strong>
+      <button type="button" (click)="onCloseAlert2()" class="close" data-hide="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="container mt-5 ml-4">
+      <form class="form-inline" [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm)">
+        <input class="form-control" name="search" formControlName="search" type="text" placeholder="Product Search"
+          aria-label="search">
+        <button class="btn btn-success" type="submit">Search</button>
+        <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal" (click)="addNewProduct()"
+          *ngIf="isAdmin == 'true'">Create New Product</button>
+      </form>
+    </div>
+    <div class="row">
+      <div>
+        <table #productsTable class="display" style="width:100%" class="responsive-table">
+          <thead class="table-header">
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Seller</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-row" *ngFor="let product of products; let i =index;">
+              <td><img src="../../../assets/{{product.imagePath }}" alt="{{ product.name }}" width="120" height="100">
+              </td>
+              <td>{{product.name}}</td>
+              <td>{{product.description}}</td>
+              <td>{{product.seller}}</td>
+              <td>Rs. {{product.price}}</td>
+              <td>
+                <button type="button" class="btn btn-success" (click)="addtoCartClick(product.id)">Add to Cart</button>
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#updateModal"
+                  (click)="update(product.id)" *ngIf="isAdmin == 'true'">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="delete(product.id)"
+                  *ngIf="isAdmin == 'true'">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+    </div>
